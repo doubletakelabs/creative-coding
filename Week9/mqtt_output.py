@@ -8,10 +8,12 @@ from digitalio import DigitalInOut, Direction
 import neopixel
 
 print("Connecting to WiFi")
-for network in wifi.radio.start_scanning_networks():
-    print("\t%s\t\tRSSI: %d\tChannel: %d" % (str(network.ssid, "utf-8"), network.rssi, network.channel))
-    
-wifi.radio.stop_scanning_networks()
+
+# if you would like to see which Wi-Fi networks the board can see, uncomment the 3 lines below
+#for network in wifi.radio.start_scanning_networks():
+#    print("\t%s\t\tRSSI: %d\tChannel: %d" % (str(network.ssid, "utf-8"), network.rssi, network.channel))   
+#wifi.radio.stop_scanning_networks()
+
 wifi.radio.connect('WIRELESS_NETWORK_NAME_HERE', 'WIRELESS_PASSWORD_HERE')
 print("Connected to WiFi")
 
